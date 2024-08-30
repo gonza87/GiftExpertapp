@@ -1,9 +1,18 @@
 import { useState } from "react";
 
 function GifExpertApp() {
-  const [list, SetList] = useState();
+  const [categories, setcategories] = useState(["one", "two"]);
 
-  return <h1>Gif</h1>;
+  return (
+    <>
+      <h1>Gif</h1>
+      <ol>
+        {categories.map((category) => {
+          return <li>{category}</li>;
+        })}
+      </ol>
+    </>
+  );
 }
 
 export default GifExpertApp;
