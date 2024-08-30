@@ -8,7 +8,7 @@ function GifExpertApp() {
       <h1>Gif</h1>
       <ol>
         {categories.map((category) => {
-          return <li>{category}</li>;
+          return <li key={category}>{category}</li>;
         })}
       </ol>
     </>
