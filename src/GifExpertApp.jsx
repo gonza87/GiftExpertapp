@@ -5,6 +5,8 @@ function GifExpertApp() {
   const [categories, setCategories] = useState(["one", "two"]);
 
   const onAddcategory = (category) => {
+    if (categories.includes(category)) return;
+
     setCategories([...categories, category]);
     console.log(categories);
   };
