@@ -5,7 +5,7 @@ function GifExpertApp() {
   const [categories, setCategories] = useState(["one", "two"]);
 
   const onAddcategory = (category) => {
-    if (categories.includes(category)) return;
+    if (categories.includes(category)) return; //si la categoria existe no hace nada
 
     setCategories([...categories, category]);
     console.log(categories);
@@ -17,8 +17,8 @@ function GifExpertApp() {
       <AddCategory onAddcategory={onAddcategory} />
 
       <ol>
-        {categories.map((category, index) => {
-          return <li key={index}>{category}</li>;
+        {categories.map((category) => {
+          return <li key={category}>{category}</li>;
         })}
       </ol>
     </>
