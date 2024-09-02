@@ -4,15 +4,15 @@ import AddCategory from "./components/AddCategory";
 function GifExpertApp() {
   const [categories, setCategories] = useState(["one", "two"]);
 
-  const onAddcategory = () => {
-    setCategories([...categories, "test"]);
+  const onAddcategory = (category) => {
+    setCategories([...categories, category]);
     console.log(categories);
   };
 
   return (
     <>
       <h1>Gif</h1>
-      <AddCategory setCategories={setCategories} />
+      <AddCategory onAddcategory={onAddcategory} />
 
       <ol>
         {categories.map((category) => {
