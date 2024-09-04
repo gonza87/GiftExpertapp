@@ -20,7 +20,7 @@ function GifGrid({ category }) {
       <h3>{category}</h3>
       <div className="card-grid">
         {images.map((item) => {
-          return <GifItem key={item.id} image={item} />;
+          return <GifItem key={item.id} {...item} />;
         })}
       </div>
     </>
