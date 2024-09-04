@@ -16,16 +16,12 @@ function GifGrid({ category }) {
 
   return (
     <>
-      {images && (
-        <div>
-          <h3>{category}</h3>
-          <ol>
-            {images.map((item) => {
-              return <li key={item.id}>{item.title}</li>;
-            })}
-          </ol>
-        </div>
-      )}
+      <h3>{category}</h3>
+      <ol>
+        {images.map((item) => {
+          return <li key={item.id}>{item.title}</li>;
+        })}
+      </ol>
     </>
   );
 }
