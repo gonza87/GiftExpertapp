@@ -18,11 +18,11 @@ function GifGrid({ category }) {
   return (
     <>
       <h3>{category}</h3>
-      <ol>
+      <div className="card-grid">
         {images.map((item) => {
-          return <GifItem />;
+          return <GifItem key={item.id} />;
         })}
-      </ol>
+      </div>
     </>
   );
 }
