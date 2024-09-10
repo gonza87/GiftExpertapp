@@ -5,10 +5,12 @@ import GifItem from "./GifItem";
 
 function GifGrid({ category }) {
   const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getImages = async () => {
     const newImages = await getGifs(category);
     setImages(newImages);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -18,11 +20,17 @@ function GifGrid({ category }) {
   return (
     <>
       <h3>{category}</h3>
-      <div className="card-grid">
-        {images.map((item) => {
-          return <GifItem key={item.id} {...item} />;
-        })}
-      </div>
+      {loading ? (
+        <p>cargando</p>
+      ) : (
+        <>
+          <div className="card-grid">
+            {images.map((item) => {
+              return <GifItem key={item.id} {...item} />;
+            })}
+          </div>
+        </>
+      )}
     </>
   );
 }
