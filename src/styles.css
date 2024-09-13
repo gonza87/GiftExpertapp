@@ -1,6 +1,7 @@
 * {
     font-family: Helvetica, Arial, sans-serif;
     background-color: rgb(247, 69, 69);
+    box-sizing: border-box;
   }
   
   body {
